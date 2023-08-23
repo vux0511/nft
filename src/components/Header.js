@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import LogoIcon from "../assets/images/store-icon.svg";
 import LogoText from "../assets/images/logo-text.svg";
 import { RiMenu3Fill } from "react-icons/ri";
@@ -26,10 +27,20 @@ function Header() {
     return (
         <section className="header">
             <div className="container header__container">
-                <div className="header__logo">
-                    <img src={LogoIcon} alt="" className="header__logo-image" />
-                    <img src={LogoText} alt="" className="header__logo-text" />
-                </div>
+                <Link to={"/"}>
+                    <div className="header__logo">
+                        <img
+                            src={LogoIcon}
+                            alt=""
+                            className="header__logo-image"
+                        />
+                        <img
+                            src={LogoText}
+                            alt=""
+                            className="header__logo-text"
+                        />
+                    </div>
+                </Link>
                 <ul className="header__menu">
                     <MdClose className="menu-close" />
                     <li className="header__item">

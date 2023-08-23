@@ -1,0 +1,42 @@
+.products {
+    &__heading {
+        margin: 50px 0 40px;
+    }
+    &__search {
+        display: flex;
+        border-radius: 16px;
+        width: 50%;
+        margin: 0 auto;
+        padding: 10px;
+        gap: 15px;
+        border: 1px solid var(--gray-100, #eef2f6);
+        background: rgba(255, 255, 255, 0.1);
+        margin-bottom: 50px;
+    }
+    &__input {
+        flex: 1;
+        font-family: $font-primary;
+        font-size: 18px;
+        font-style: normal;
+        line-height: 32px;
+        text-transform: capitalize;
+        color: $white-color;
+        border: none;
+        outline: none;
+        background-color: transparent;
+    }
+    &__button {
+        background-color: $purple-color;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        border-radius: 100rem;
+        width: 42px;
+        height: 42px;
+        &-search {
+            width: 21px;
+            height: 21px;
+            color: $white-color;
+        }
+    }
+}

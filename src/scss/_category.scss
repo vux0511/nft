@@ -1,0 +1,35 @@
+.category {
+    &__wrapper {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex: 1;
+    }
+    &__item {
+        width: max-content;
+        min-width: 85px;
+        padding: 13px 16px;
+        border-radius: 16px;
+        border: 1px solid $purple-color;
+        background-color: transparent;
+        color: $white-color;
+        font-size: 16px;
+        font-family: $font-primary;
+        cursor: pointer;
+        &-active {
+            background-color: $purple-color;
+        }
+    }
+    &__button {
+        &-sort {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+}
