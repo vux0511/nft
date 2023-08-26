@@ -20,6 +20,20 @@ function Products() {
                     </button>
                 </form>
                 <Category />
+                <div className="products__list">
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                </div>
             </div>
         </section>
     );

@@ -2,6 +2,15 @@
     &__heading {
         margin: 50px 0 40px;
     }
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    &__card {
+        margin-right: 15px;
+    }
     &__search {
         display: flex;
         border-radius: 16px;
@@ -40,3 +49,31 @@
         }
     }
 }
+
+@media screen and (max-width: 820px) {
+    .products {
+        &__search {
+            width: 70%;
+        }
+    }
+}
+@media screen and (max-width: 640px) {
+    .products {
+        &__search {
+            width: 90%;
+        }
+        &__heading {
+            margin: 0;
+        }
+    }
+}
+// @media screen and (max-width: 480px) {
+//     .category {
+//         &__logo {
+//             width: 100%;
+//             &-text {
+//                 display: none;
+//             }
+//         }
+//     }
+// }

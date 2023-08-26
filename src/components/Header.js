@@ -3,6 +3,7 @@ import LogoIcon from "../assets/images/store-icon.svg";
 import LogoText from "../assets/images/logo-text.svg";
 import { RiMenu3Fill } from "react-icons/ri";
 import { MdClose } from "react-icons/md";
+import { BsCart } from "react-icons/bs";
 
 function Header() {
     function handleToggleMenu() {
@@ -44,30 +45,29 @@ function Header() {
                 <ul className="header__menu">
                     <MdClose className="menu-close" />
                     <li className="header__item">
-                        <a href="" className="header__item-link">
+                        <Link className="header__item-link" to={"/products"}>
                             Marketplace
-                        </a>
+                        </Link>
                     </li>
                     <li className="header__item">
-                        <a href="" className="header__item-link">
+                        <Link className="header__item-link" to={"/products"}>
                             Collection
-                        </a>
+                        </Link>
                     </li>
                     <li className="header__item">
-                        <a href="" className="header__item-link">
-                            {" "}
-                            Community{" "}
-                        </a>
+                        <Link className="header__item-link" to={"/products"}>
+                            Community
+                        </Link>
                     </li>
                     <li className="header__item">
-                        <a href="" className="header__item-link">
+                        <Link className="header__item-link" to={"/products"}>
                             Create
-                        </a>
+                        </Link>
                     </li>
                     <li className="header__item">
-                        <a href="#" className="button button-primary">
-                            Login
-                        </a>
+                        <Link className="button button-primary" to={"/login"}>
+                            Wallet
+                        </Link>
                     </li>
                 </ul>
                 <RiMenu3Fill

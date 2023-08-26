@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Card() {
     return (
         <Link to={"/product/id"}>
-            <div className="card__item swiper-slide">
+            <div className="card__item products__card swiper-slide">
                 <img src={CardImg} alt="" className="card__image" />
                 <div className="card__author">
                     <a href="">
