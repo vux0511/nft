@@ -2,8 +2,15 @@ import { Link } from "react-router-dom";
 import LogoIcon from "../assets/images/store-icon.svg";
 import LogoText from "../assets/images/logo-text.svg";
 import { RiMenu3Fill } from "react-icons/ri";
-import { MdClose } from "react-icons/md";
-import { BsCart } from "react-icons/bs";
+import { MdClose, MdOutlineWallet, MdOutlineModeNight } from "react-icons/md";
+import { BiUserCircle, BiPencil } from "react-icons/bi";
+import {
+    AiOutlineShoppingCart,
+    AiOutlineEye,
+    AiOutlineSetting,
+} from "react-icons/ai";
+import { FiUser } from "react-icons/fi";
+import { BsGrid3X3 } from "react-icons/bs";
 
 function Header() {
     function handleToggleMenu() {
@@ -56,18 +63,48 @@ function Header() {
                     </li>
                     <li className="header__item">
                         <Link className="header__item-link" to={"/products"}>
-                            Community
-                        </Link>
-                    </li>
-                    <li className="header__item">
-                        <Link className="header__item-link" to={"/products"}>
                             Create
                         </Link>
                     </li>
                     <li className="header__item">
-                        <Link className="button button-primary" to={"/login"}>
-                            Wallet
-                        </Link>
+                        <div className="header__button">
+                            <button className="header__button-wallet">
+                                <MdOutlineWallet className="header__button-wallet-icon" />{" "}
+                                Connect Wallet
+                            </button>
+                            <button className="header__button-user">
+                                <BiUserCircle />
+                                <ul className="header__button-list">
+                                    <li className="header__button-item">
+                                        <FiUser className="header__button-icon" />
+                                        <span>Profile</span>
+                                    </li>
+                                    <li className="header__button-item">
+                                        <AiOutlineEye className="header__button-icon" />
+                                        <span>Watchlist</span>
+                                    </li>
+                                    <li className="header__button-item">
+                                        <BsGrid3X3 className="header__button-icon" />
+                                        <span>My Collection</span>
+                                    </li>
+                                    <li className="header__button-item">
+                                        <BiPencil className="header__button-icon" />
+                                        <span>Create</span>
+                                    </li>
+                                    <li className="header__button-item">
+                                        <AiOutlineSetting className="header__button-icon" />
+                                        <span>Setting</span>
+                                    </li>
+                                    <li className="header__button-item">
+                                        <MdOutlineModeNight className="header__button-icon" />
+                                        <span>Dark Mode</span>
+                                    </li>
+                                </ul>
+                            </button>
+                            <button className="header__button-cart">
+                                <AiOutlineShoppingCart />
+                            </button>
+                        </div>
                     </li>
                 </ul>
                 <RiMenu3Fill

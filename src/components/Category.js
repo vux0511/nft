@@ -13,7 +13,6 @@ function Category() {
                                 <IoIosArrowDown />
                             </p>
                         </span>
-                        <i class="fa fa-caret-down dropdown__caret"></i>
                     </div>
                     <ul class="dropdown__list">
                         <li class="dropdown__item">
