@@ -15,7 +15,7 @@ import {
     AiOutlineSetting,
 } from "react-icons/ai";
 import { FiUser } from "react-icons/fi";
-import { BsGrid3X3 } from "react-icons/bs";
+import { BsGrid3X3, BsTrash } from "react-icons/bs";
 import LogoMetaMaskIcon from "../assets/images/meta-mask-icon.png";
 import LogoGlow from "../assets/images/glow.svg";
 import LogoCoinbase from "../assets/images/walletlink-alternative.png";
@@ -26,6 +26,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { ethers } from "ethers";
 
 function Header() {
+    const [popupCart, setPopupCart] = useState(false);
     const [errorMessage, setErrorMessage] = useState(null);
     const [defaultAccount, setDefaultAccount] = useState(null);
     const [userBalance, setUserBalance] = useState(null);
@@ -49,6 +50,11 @@ function Header() {
         });
     }
 
+    const handleToggleCart = () => {
+        setPopupCart(!popupCart);
+        console.log(popupCart);
+    };
+
     // function handlePopUp() {
     //     const popUpToggle = document.querySelector(".header__button-wallet");
     //     const popUpClose = document.querySelector(".header__popup-close");
@@ -62,14 +68,14 @@ function Header() {
     //         popUp.classList.remove("header__popup-active");
     //     });
 
-    // document.addEventListener("click", function (e) {
-    //     if (
-    //         !popUp.contains(e.target) &&
-    //         !e.target.matches(".header__button-wallet")
-    //     ) {
-    //         popUp.classList.remove("header__popup-active");
-    //     }
-    // });
+    //     document.addEventListener("click", function (e) {
+    //         if (
+    //             !popUp.contains(e.target) &&
+    //             !e.target.matches(".header__button-wallet")
+    //         ) {
+    //             popUp.classList.remove("header__popup-active");
+    //         }
+    //     });
     // }
 
     const connectWallet = () => {
@@ -248,6 +254,24 @@ function Header() {
                                         </div>
                                     </div>
                                 </div>
+                                {/* <div className="header__popup-connected">
+                                    <div className="header__popup-address">
+                                        <img
+                                            src={LogoMetaMaskIcon}
+                                            alt=""
+                                            className="header__popup-logo"
+                                        />
+                                        3x8491748236423784
+                                    </div>
+                                    <div className="header__popup-eth">
+                                        <img
+                                            src={LogoMetaMaskIcon}
+                                            alt=""
+                                            className="header__popup-img-eth"
+                                        />
+                                        Ethereum - $0.00 USD
+                                    </div>
+                                </div> */}
                             </button>
                             <button className="header__button-user">
                                 <BiUserCircle />
@@ -278,9 +302,167 @@ function Header() {
                                     </li>
                                 </ul>
                             </button>
-                            <button className="header__button-cart">
+                            <button
+                                className="header__button-cart"
+                                onClick={handleToggleCart}
+                            >
                                 <AiOutlineShoppingCart />
                             </button>
+                            {popupCart && (
+                                <div className="overlay cart">
+                                    <div className="header__popup__cart">
+                                        <div className="cart__top">
+                                            <div className="cart__title">
+                                                Your Cart
+                                            </div>
+                                            <div className="cart__btnclear">
+                                                <MdClear
+                                                    className="cart__clear"
+                                                    onClick={handleToggleCart}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="cart__info">
+                                            <div className="cart__quantity">
+                                                4 items
+                                            </div>
+                                            <div className="button__clear-item">
+                                                Clear all
+                                            </div>
+                                        </div>
+                                        <div className="cart__wrapper">
+                                            <div className="cart__item">
+                                                <img
+                                                    src="https://i.seadn.io/s/raw/files/a7d885d7d397c4deeb51b82506bb04c9.png?auto=format&dpr=1&w=128"
+                                                    alt="Image Item"
+                                                    className="cart__image"
+                                                />
+                                                <div className="cart__name">
+                                                    <div className="cart__name-product">
+                                                        Goosepunks #195áđâsd
+                                                        akjsdgahjsd akgjsd
+                                                    </div>
+                                                    <div className="cart__name-author">
+                                                        Goosepunks
+                                                    </div>
+                                                </div>
+                                                <div className="cart__price">
+                                                    0.011 ETH
+                                                </div>
+                                                <div className="cart__trash">
+                                                    <BsTrash />
+                                                </div>
+                                            </div>
+                                            <div className="cart__item">
+                                                <img
+                                                    src="https://i.seadn.io/s/raw/files/a7d885d7d397c4deeb51b82506bb04c9.png?auto=format&dpr=1&w=128"
+                                                    alt="Image Item"
+                                                    className="cart__image"
+                                                />
+                                                <div className="cart__name">
+                                                    <div className="cart__name-product">
+                                                        Goosepunks #195áđâsd
+                                                        akjsdgahjsd akgjsd
+                                                    </div>
+                                                    <div className="cart__name-author">
+                                                        Goosepunks
+                                                    </div>
+                                                </div>
+                                                <div className="cart__price">
+                                                    0.011 ETH
+                                                </div>
+                                                <div className="cart__trash">
+                                                    <BsTrash />
+                                                </div>
+                                            </div>
+                                            <div className="cart__item">
+                                                <img
+                                                    src="https://i.seadn.io/s/raw/files/a7d885d7d397c4deeb51b82506bb04c9.png?auto=format&dpr=1&w=128"
+                                                    alt="Image Item"
+                                                    className="cart__image"
+                                                />
+                                                <div className="cart__name">
+                                                    <div className="cart__name-product">
+                                                        Goosepunks #195áđâsd
+                                                        akjsdgahjsd akgjsd
+                                                    </div>
+                                                    <div className="cart__name-author">
+                                                        Goosepunks
+                                                    </div>
+                                                </div>
+                                                <div className="cart__price">
+                                                    0.011 ETH
+                                                </div>
+                                                <div className="cart__trash">
+                                                    <BsTrash />
+                                                </div>
+                                            </div>
+                                            <div className="cart__item">
+                                                <img
+                                                    src="https://i.seadn.io/s/raw/files/a7d885d7d397c4deeb51b82506bb04c9.png?auto=format&dpr=1&w=128"
+                                                    alt="Image Item"
+                                                    className="cart__image"
+                                                />
+                                                <div className="cart__name">
+                                                    <div className="cart__name-product">
+                                                        Goosepunks #195áđâsd
+                                                        akjsdgahjsd akgjsd
+                                                    </div>
+                                                    <div className="cart__name-author">
+                                                        Goosepunks
+                                                    </div>
+                                                </div>
+                                                <div className="cart__price">
+                                                    0.011 ETH
+                                                </div>
+                                                <div className="cart__trash">
+                                                    <BsTrash />
+                                                </div>
+                                            </div>
+                                            <div className="cart__item">
+                                                <img
+                                                    src="https://i.seadn.io/s/raw/files/a7d885d7d397c4deeb51b82506bb04c9.png?auto=format&dpr=1&w=128"
+                                                    alt="Image Item"
+                                                    className="cart__image"
+                                                />
+                                                <div className="cart__name">
+                                                    <div className="cart__name-product">
+                                                        Goosepunks #195áđâsd
+                                                        akjsdgahjsd akgjsd
+                                                    </div>
+                                                    <div className="cart__name-author">
+                                                        Goosepunks
+                                                    </div>
+                                                </div>
+                                                <div className="cart__price">
+                                                    0.011 ETH
+                                                </div>
+                                                <div className="cart__trash">
+                                                    <BsTrash />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="cart__total">
+                                            <div className="cart__total-title">
+                                                Total price
+                                            </div>
+                                            <div className="cart__total-price">
+                                                <div className="cart__total-eth">
+                                                    0.11.09 ETH
+                                                </div>
+                                                <div className="cart__total-dolar">
+                                                    $175.41
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="cart__purchase">
+                                            <button className="button button-primary button-purchase">
+                                                Complete Purchase
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </li>
                 </ul>

@@ -205,6 +205,25 @@
     // &__popup-active {
     //     display: block;
     // }
+
+    &__popup {
+        &__cart {
+            background-color: $white-color;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 370px;
+            z-index: 100;
+            margin: 24px;
+            border-radius: 10px;
+            overflow: hidden auto;
+            color: $background;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
 }
 .menu-toggle,
 .menu-close {

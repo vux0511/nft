@@ -42,6 +42,10 @@ body {
             color: $white-color !important;
         }
     }
+    &-purchase {
+        font-size: 18px;
+        font-weight: 500;
+    }
     &-transparent {
         border: 2px solid $purple-color;
         background-color: transparent;
@@ -88,6 +92,17 @@ body {
     margin-bottom: 30px;
 }
 
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background: rgba(255, 255, 255, 0.3);
+    z-index: 90;
+}
 @media screen and (max-width: 640px) {
     .text-title {
         font-size: 30px;
